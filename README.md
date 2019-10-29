@@ -1,62 +1,53 @@
-# Async Exercise #5 - Async Await
+# Async Exercise #7 - Async Await
 
-## Task - The Order System
+## The Order System
 
-### Task - Part 1
+### Task
 
 Please create a file "order.js".
 
 Within that file - Declare the following functions:
 
-- saveOrderToDatabase()
+- createCustomer()
 
-- sendEmailConfirmation()
+- sendEmail()
 
 - processPayment()
 
-- reserveStockItem()
+- reserveItemsInStock()
 
-Within these functions - return a new Promise. 
+All these functions should return a new Promise.
 
-Like so: `return new Promise((resolve, reject) => {...})`
-
-Within the promise function:
-
-Just call the resolve() Method. And pass in a message to it.
-The message states what the function has done.
+Call the resolve() Method and pass in a message. The message should just state what the function has just done.
 
 Example for processPayment:
-Write something like this: resolve("Processed the payment successfully").
+resolve("Processed the payment successfully").
 
-Now lets simulate that each task will take 2 seconds to complete:
-
-Wrap the resolve() statement in the functions into a setTimetout call. The timeout should be 2 seconds
+Now simulate that the task in the promise will take 2 seconds to complete.
 
 ### Task - Part 2
 
-Now we want to setup a function that processes a complete order.
+Now we want to setup a function that processe a complete order, including all subtasks.
 
-Write a function "order". It takes no parameters.
-
-Make it an async function (so state the keyword "async" in front of the parentheses, like so `const order = async() => ...`)
+Write a function "order". It takes no parameters. Make it an async function using the async keyword.
 
 Within the order function:
 
-- Call the four other methods in sequence
-- Use the keyword await before each function call
-- And store the result in a variable => like so: `let result = await saveOrderToDatabase()` => Do the same for the other three functions as well
-- After each function call: Printout the result variable to the console.
+- Call the four order methods in sequence using await
+- Store the result in a variable and output the result
 
-Now call your function order() at the bottom to test the output.
+Call your function order() at the bottom. 
+
+Now run your script.
 
 You should now see all the order operations in series, each one completing after 2 seconds.
 
 The final output on the terminal should be kind of like this:
 
 ```
-Saved the order to the database successfully
-Send order confirmation via Email successfully
-Processed the customer payment successfully
+Created customer in the database successfully
+Sent order confirmation to customer email successfully
+Processed customer payment successfully
 Reserved the product in stock succesfully
 ```
 
@@ -66,4 +57,4 @@ Well done and congrats!
 
 You now have dealt with the most important asynchronous operations in JavaScript.
 
-Now relax and go back enjoy your synchronous world again :-)
+Now relax and enjoy your synchronous world again :-)
